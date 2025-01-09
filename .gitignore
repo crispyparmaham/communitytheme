@@ -67,6 +67,6 @@ Thumbs.db
 !.github
 
 # track these plugins
-wp-content/themes/communitythememta
+!wp-content/themes/communitythememta
 wp-content/themes/communitythememta/node_modules
 wp-content/themes/communitythememta/vendor
