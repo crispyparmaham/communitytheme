@@ -1,0 +1,50 @@
+/* Hauptheader */
+.main-header {
+  background-color: var(--header-background-color, #f8f9fa);
+  display: flex;
+  padding: 20px;
+}
+
+/* Logo im Header */
+.main-header .main-logo {
+  float: left;
+}
+
+/* Kleine, mittlere und große Logos */
+.main-header .main-logo.logo-small img {
+  width: 140px;
+}
+
+.main-header .main-logo.logo-medium img {
+  width: 200px;
+}
+
+.main-header .main-logo.logo-large img {
+  width: 260px;
+}
+
+/* Navigation im Header */
+.main-header .nav {
+  float: right;
+}
+
+.main-header .nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-header .nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.main-header .nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Hover-Effekt für Links */
+.main-header .nav ul li a:hover {
+  color: #007bff;
+}
