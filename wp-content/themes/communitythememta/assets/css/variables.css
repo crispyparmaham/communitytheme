@@ -4,16 +4,16 @@
     --secondary-color: #0f6056;
 
     --background-color: #dbdbdb;
-    --header-background-color: #dd9933;
+    --header-background-color: #eaeaea;
 
     --button-root-color: #1e73be;
     --button-hover-color: #eeee22;
 
-    --headline-xs: ;
-    --headline-s: ;
-    --headline-m: ;
-    --headline-l: ;
-    --headline-xl: ;
-    --headline-xxl: ;
+    --headline-xs: 24px;
+    --headline-s: 26px;
+    --headline-m: 28px;
+    --headline-l: 34px;
+    --headline-xl: 48px;
+    --headline-xxl: 60px;
     
 }

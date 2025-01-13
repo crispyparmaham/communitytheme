@@ -21,6 +21,10 @@ function load_stylesheet() {
 	//UTILS
 	wp_register_style( 'button', get_template_directory_uri() . '/assets/css/utils/button.css', array(), false, 'all' );
 	wp_enqueue_style( 'button' );
+	wp_register_style( 'typography', get_template_directory_uri() . '/assets/css/utils/typography.css', array(), false, 'all' );
+	wp_enqueue_style( 'typography' );
+
+
 }
 add_action( 'wp_enqueue_scripts', 'load_stylesheet' );
 
@@ -84,12 +88,12 @@ function generate_dynamic_css() {
 
 	// FONTS
 
-    $headlineXS = get_field('h6_one', 'option');
-    $headlineS = get_field('h5_one', 'option');
-    $headlineM = get_field('h4_one', 'option');
-    $headlineL = get_field('h3_one', 'option');
-    $headlineXL = get_field('h2_one', 'option');
-    $headlineXXL = get_field('h1_one', 'option');
+    $headlineXS = get_field('h_six', 'option') . "px";
+    $headlineS = get_field('h_five', 'option') . "px";
+    $headlineM = get_field('h_four', 'option') . "px";
+    $headlineL = get_field('h_three', 'option') . "px";
+    $headlineXL = get_field('h_two', 'option') . "px";
+    $headlineXXL = get_field('h_one', 'option') . "px";
 
     $css_content = "
 :root {

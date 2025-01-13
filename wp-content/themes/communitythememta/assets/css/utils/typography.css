@@ -1,0 +1,23 @@
+.home h1.wp-block-heading {
+  font-size: var(--headline-xxl);
+}
+
+.home h2.wp-block-heading {
+  font-size: var(--headline-xl);
+}
+
+h3.wp-block-heading {
+  font-size: var(--headline-l);
+}
+
+h4.wp-block-heading {
+  font-size: var(--headline-m);
+}
+
+h5.wp-block-heading {
+  font-size: var(--headline-s);
+}
+
+h6.wp-block-heading {
+  font-size: var(--headline-xs);
+}
