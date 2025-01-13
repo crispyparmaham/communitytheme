@@ -10,10 +10,10 @@
     <div class="main-header" style="--header-background-color: <?php echo esc_attr(get_field('background-color', 'option')); ?>;">
         <?php
         // Logo von der Optionsseite abrufen
-        $logo = get_field('logo', 'option'); 
+        $logo = get_field('logo', 'option');
         $logo_size = get_field('logo_size', 'option');
-        if ($logo) : 
-            // Setzen die CSS-Klasse oder Inline-Stile basierend auf der Logo-Größe
+        
+        if ($logo) :
             $logo_class = '';
             $logo_style = '';
 
@@ -27,13 +27,6 @@
                 case 'large':
                     $logo_class = 'logo-large';
                     break;
-                default:
-                    $logo_class = '';
-            }
-
-            // Falls eine benutzerdefinierte Größe im Textfeld eingegeben wurde
-            if ($logo_size && !in_array($logo_size, ['small', 'medium', 'large'])) {
-                $logo_style = 'style="width: ' . esc_attr($logo_size) . ';"'; 
             }
         ?>
             <div class="main-logo <?php echo esc_attr($logo_class); ?>">
@@ -42,20 +35,22 @@
         <?php else : ?>
             <h1><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a></h1>
         <?php endif; ?>
-        <nav>
-            <?php
-            $selected_menu_id = get_option('communitytheme_selected_menu');
-            if ($selected_menu_id) {
-                wp_nav_menu(array(
-                    'menu' => $selected_menu_id,
-                    'container' => 'nav',
-                    'container_class' => 'main-navigation',
-                ));
-            } else {
-                echo '<p>' . __('Kein Menü ausgewählt.', 'communitytheme') . '</p>';
-            }
-            ?>
-        </nav>
+
+        <?php
+        $selected_menu_id = get_field('selected_menu', 'option'); 
+
+        if ( $selected_menu_id ) :
+            wp_nav_menu(array(
+                'menu' => $selected_menu_id,
+                'container' => 'nav',
+                'container_class' => 'main-navigation',
+            ));
+        else :
+            echo '<p>' . __('Kein Menü ausgewählt.', 'communitytheme') . '</p>';
+        endif;
+        
+        ?>
     </div>
 </header>
+
 

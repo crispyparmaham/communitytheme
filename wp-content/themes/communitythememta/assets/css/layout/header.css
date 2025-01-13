@@ -2,6 +2,8 @@
 .main-header {
   background-color: var(--header-background-color, #f8f9fa);
   display: flex;
+  flex-direction: row;
+  align-items: center;
   padding: 20px;
 }
 
@@ -24,27 +26,27 @@
 }
 
 /* Navigation im Header */
-.main-header .nav {
+.main-header .main-navigation {
   float: right;
 }
 
-.main-header .nav ul {
+.main-header .main-navigation ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.main-header .nav ul li {
+.main-header .main-navigation ul li {
   display: inline-block;
   margin-left: 20px;
 }
 
-.main-header .nav ul li a {
+.main-header .main-navigation ul li a {
   text-decoration: none;
   color: #333;
 }
 
 /* Hover-Effekt für Links */
-.main-header .nav ul li a:hover {
+.main-header .main-navigation ul li a:hover {
   color: #007bff;
 }
