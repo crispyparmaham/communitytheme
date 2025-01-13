@@ -76,12 +76,19 @@ function generate_dynamic_css() {
     // Pfad zur variables.css
     $css_file = get_template_directory() . '/assets/css/variables.css';
 
-    // Farben aus ACF abrufen
+	//GRID
+
+	$innerContentWidth = get_field('inner_content_width', 'option') ? get_field('inner_content_width', 'option') . "px" : "1120px";
+	$innerHeaderWidth = get_field('inner_header_width', 'option') ? get_field('inner_header_width', 'option') . "px" : "1120px";
+	$innerFooterWidth = get_field('inner_footer_width', 'option') ? get_field('inner_footer_width', 'option') . "px" : "1120px";
+
+    //COLORS
     $primaryColor = get_field('primary_color', 'option');
     $secondaryColor = get_field('secondary_color', 'option');
 
-    $backgroundColor = get_field('background_body_color', 'option');
+    $backgroundBodyColor = get_field('background_body_color', 'option');
     $backgroundHeaderColor = get_field('background_header_color', 'option');
+    $backgroundFooterColor = get_field('background_footer_color', 'option');
 
     $buttonRootColor = get_field('button_color', 'option');
     $buttonHoverColor = get_field('button_hover_color', 'option');
@@ -94,14 +101,19 @@ function generate_dynamic_css() {
     $headlineL = get_field('h_three', 'option') . "px";
     $headlineXL = get_field('h_two', 'option') . "px";
     $headlineXXL = get_field('h_one', 'option') . "px";
+    $bodyText = get_field('body_text', 'option') . "px";
+
+	$fontFamilyHeading = get_field('font_heading', 'option');
+	$fontFamilyText = get_field('font_text', 'option');
 
     $css_content = "
 :root {
     --primary-color: {$primaryColor};
     --secondary-color: {$secondaryColor};
 
-    --background-color: {$backgroundColor};
+    --body-background-color: {$backgroundBodyColor};
     --header-background-color: {$backgroundHeaderColor};
+    --footer-background-color: {$backgroundFooterColor};
 
     --button-root-color: {$buttonRootColor};
     --button-hover-color: {$buttonHoverColor};
@@ -112,7 +124,14 @@ function generate_dynamic_css() {
     --headline-l: {$headlineL};
     --headline-xl: {$headlineXL};
     --headline-xxl: {$headlineXXL};
-    
+    --body-text-size: {$bodyText};
+
+    --inner-content-width: {$innerContentWidth};
+    --inner-header-width: {$innerHeaderWidth};
+    --inner-footer-width: {$innerFooterWidth};
+
+    --font-family-heading: {$fontFamilyHeading};
+    --font-family-text: {$fontFamilyText};
 }";
 
     // CSS-Datei aktualisieren

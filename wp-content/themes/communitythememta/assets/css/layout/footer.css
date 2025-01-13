@@ -1,4 +1,28 @@
-.footer-container {
+.main-footer {
   display: block;
-  margin: 60px 0;
+  background-color: var(--footer-background-color);
+}
+
+.footer-inner-wrap {
+  width: 100%;
+  max-width: var(--inner-footer-width);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Kleine, mittlere und große Logos */
+.main-footer .main-logo.logo-small img {
+  width: 140px;
+}
+
+.main-footer .main-logo.logo-medium img {
+  width: 200px;
+}
+
+.main-footer .main-logo.logo-large img {
+  width: 260px;
 }

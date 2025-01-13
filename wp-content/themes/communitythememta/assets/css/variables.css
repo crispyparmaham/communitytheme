@@ -3,11 +3,12 @@
     --primary-color: #dd3333;
     --secondary-color: #0f6056;
 
-    --background-color: #dbdbdb;
-    --header-background-color: #eaeaea;
+    --body-background-color: #efefef;
+    --header-background-color: #d3d3d3;
+    --footer-background-color: #8b8b8b;
 
-    --button-root-color: #1e73be;
-    --button-hover-color: #eeee22;
+    --button-root-color: #ff2b2b;
+    --button-hover-color: #000000;
 
     --headline-xs: 24px;
     --headline-s: 26px;
@@ -15,5 +16,12 @@
     --headline-l: 34px;
     --headline-xl: 48px;
     --headline-xxl: 60px;
-    
+    --body-text-size: 18px;
+
+    --inner-content-width: 1400px;
+    --inner-header-width: 1600px;
+    --inner-footer-width: 1400px;
+
+    --font-family-heading: 'DIN 2014', sans-serif;;
+    --font-family-text: 'DIN 2014', sans-serif;;
 }

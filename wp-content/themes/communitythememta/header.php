@@ -6,8 +6,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-<header>
-    <div class="main-header">
+<header class="main-header">
+    <div class="header-inner-wrap">
         <?php
         // Logo von der Optionsseite abrufen
         $logo = get_field('logo', 'option');

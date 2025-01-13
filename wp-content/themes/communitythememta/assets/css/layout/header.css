@@ -1,10 +1,18 @@
 /* Hauptheader */
 .main-header {
   background-color: var(--header-background-color);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header-inner-wrap {
+  width: 100%;
+  max-width: var(--inner-header-width);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin: 0 auto;
   padding: 20px;
 }
 
