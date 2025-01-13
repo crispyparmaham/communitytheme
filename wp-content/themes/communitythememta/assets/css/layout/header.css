@@ -1,9 +1,10 @@
 /* Hauptheader */
 .main-header {
-  background-color: var(--header-background-color, #f8f9fa);
+  background-color: var(--header-background-color);
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   padding: 20px;
 }
 

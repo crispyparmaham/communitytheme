@@ -2,8 +2,11 @@
 
 //LOAD STYLESHEETS
 function load_stylesheet() {
+	//BASE
 	wp_register_style( 'main', get_template_directory_uri() . '/assets/css/base/main.css', array(), false, 'all' );
 	wp_enqueue_style( 'main' );
+
+	//LAYOUT
 	wp_register_style( 'grid', get_template_directory_uri() . '/assets/css/layout/grid.css', array(), false, 'all' );
 	wp_enqueue_style( 'grid' );
 	wp_register_style( 'header', get_template_directory_uri() . '/assets/css/layout/header.css', array(), false, 'all' );
@@ -14,6 +17,10 @@ function load_stylesheet() {
 	wp_enqueue_style( 'sidebar' );
 	wp_register_style( 'theme', get_template_directory_uri() . '/assets/css/layout/theme.css', array(), false, 'all' );
 	wp_enqueue_style( 'theme' );
+
+	//UTILS
+	wp_register_style( 'button', get_template_directory_uri() . '/assets/css/utils/button.css', array(), false, 'all' );
+	wp_enqueue_style( 'button' );
 }
 add_action( 'wp_enqueue_scripts', 'load_stylesheet' );
 
@@ -47,9 +54,6 @@ add_action( 'widgets_init', 'theme_register_sidebars' );
 //SKRIPTE
 
 wp_enqueue_style('custom-fields', get_template_directory_uri() . '/custom-fields.php');
-wp_enqueue_style('dynamic-styles', get_template_directory_uri() . '/assets/includes/dynamic-styles.php');
-
-
 
 
 //GENERATE CSS
@@ -69,15 +73,42 @@ function generate_dynamic_css() {
     $css_file = get_template_directory() . '/assets/css/variables.css';
 
     // Farben aus ACF abrufen
-    $primary_color = get_field('primary_color', 'option') ?: '#000000';
-    $secondary_color = get_field('secondary_color', 'option') ?: '#ffffff';
-    $background_color = get_field('background_color', 'option') ?: '#f5f5f5';
+    $primaryColor = get_field('primary_color', 'option');
+    $secondaryColor = get_field('secondary_color', 'option');
+
+    $backgroundColor = get_field('background_body_color', 'option');
+    $backgroundHeaderColor = get_field('background_header_color', 'option');
+
+    $buttonRootColor = get_field('button_color', 'option');
+    $buttonHoverColor = get_field('button_hover_color', 'option');
+
+	// FONTS
+
+    $headlineXS = get_field('h6_one', 'option');
+    $headlineS = get_field('h5_one', 'option');
+    $headlineM = get_field('h4_one', 'option');
+    $headlineL = get_field('h3_one', 'option');
+    $headlineXL = get_field('h2_one', 'option');
+    $headlineXXL = get_field('h1_one', 'option');
 
     $css_content = "
 :root {
-    --primary-color: {$primary_color};
-    --secondary-color: {$secondary_color};
-    --background-color: {$background_color};
+    --primary-color: {$primaryColor};
+    --secondary-color: {$secondaryColor};
+
+    --background-color: {$backgroundColor};
+    --header-background-color: {$backgroundHeaderColor};
+
+    --button-root-color: {$buttonRootColor};
+    --button-hover-color: {$buttonHoverColor};
+
+    --headline-xs: {$headlineXS};
+    --headline-s: {$headlineS};
+    --headline-m: {$headlineM};
+    --headline-l: {$headlineL};
+    --headline-xl: {$headlineXL};
+    --headline-xxl: {$headlineXXL};
+    
 }";
 
     // CSS-Datei aktualisieren

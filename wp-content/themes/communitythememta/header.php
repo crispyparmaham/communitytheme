@@ -7,7 +7,7 @@
 
 <body <?php body_class(); ?>>
 <header>
-    <div class="main-header" style="--header-background-color: <?php echo esc_attr(get_field('background-color', 'option')); ?>;">
+    <div class="main-header">
         <?php
         // Logo von der Optionsseite abrufen
         $logo = get_field('logo', 'option');
