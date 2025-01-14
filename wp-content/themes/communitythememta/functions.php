@@ -106,6 +106,13 @@ function generate_dynamic_css() {
 	$fontFamilyHeading = get_field('font_heading', 'option');
 	$fontFamilyText = get_field('font_text', 'option');
 
+	$fontColorHeading = get_field('font_color_heading', 'option');
+	$fontColorText = get_field('font_color_text', 'option');
+	$fontColorHeader = get_field('font_color_header', 'option');
+	$fontColorFooter = get_field('font_color_footer', 'option');
+	$fontColorHeaderHover = get_field('font_color_header_hover', 'option');
+	$fontColorFooterHover = get_field('font_color_footer_hover', 'option');
+
     $css_content = "
 :root {
     --primary-color: {$primaryColor};
@@ -132,6 +139,13 @@ function generate_dynamic_css() {
 
     --font-family-heading: {$fontFamilyHeading};
     --font-family-text: {$fontFamilyText};
+
+    --font-color-heading: {$fontColorHeading};
+    --font-color-text: {$fontColorText};
+    --font-color-header: {$fontColorHeader};
+    --font-color-footer: {$fontColorFooter};
+    --font-color-header-hover: {$fontColorHeaderHover};
+    --font-color-footer-hover: {$fontColorFooterHover};
 }";
 
     // CSS-Datei aktualisieren

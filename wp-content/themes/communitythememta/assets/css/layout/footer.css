@@ -1,6 +1,7 @@
 .main-footer {
   display: block;
   background-color: var(--footer-background-color);
+  color: var(--font-color-footer);
 }
 
 .footer-inner-wrap {
@@ -25,4 +26,30 @@
 
 .main-footer .main-logo.logo-large img {
   width: 260px;
+}
+
+/* Navigation im footer */
+.main-footer nav {
+  float: right;
+}
+
+.main-footer nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-footer nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.main-footer nav ul li a {
+  text-decoration: none;
+  color: var(--font-color-footer);
+}
+
+/* Hover-Effekt für Links */
+.main-footer nav ul li a:hover {
+  color: var(--font-color-footer-hover);
 }

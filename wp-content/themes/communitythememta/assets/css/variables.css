@@ -4,7 +4,7 @@
     --secondary-color: #0f6056;
 
     --body-background-color: #efefef;
-    --header-background-color: #d3d3d3;
+    --header-background-color: #ffffff;
     --footer-background-color: #8b8b8b;
 
     --button-root-color: #ff2b2b;
@@ -19,9 +19,16 @@
     --body-text-size: 18px;
 
     --inner-content-width: 1400px;
-    --inner-header-width: 1600px;
+    --inner-header-width: 1400px;
     --inner-footer-width: 1400px;
 
     --font-family-heading: 'DIN 2014', sans-serif;;
     --font-family-text: 'DIN 2014', sans-serif;;
+
+    --font-color-heading: #8224e3;
+    --font-color-text: #81d742;
+    --font-color-header: #dd3333;
+    --font-color-footer: #eeee22;
+    --font-color-header-hover: #dd9933;
+    --font-color-footer-hover: #dd3333;
 }

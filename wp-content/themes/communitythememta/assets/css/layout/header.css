@@ -3,6 +3,7 @@
   background-color: var(--header-background-color);
   width: 100%;
   margin: 0 auto;
+  color: var(--font-color-header);
 }
 
 .header-inner-wrap {
@@ -35,27 +36,27 @@
 }
 
 /* Navigation im Header */
-.main-header .main-navigation {
+.main-header nav {
   float: right;
 }
 
-.main-header .main-navigation ul {
+.main-header nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.main-header .main-navigation ul li {
+.main-header nav ul li {
   display: inline-block;
   margin-left: 20px;
 }
 
-.main-header .main-navigation ul li a {
+.main-header nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: var(--font-color-header);
 }
 
 /* Hover-Effekt für Links */
-.main-header .main-navigation ul li a:hover {
-  color: #007bff;
+.main-header nav ul li a:hover {
+  color: var(--font-color-header-hover);
 }
