@@ -7,6 +7,7 @@ h6 {
   font-family: var(--font-family-heading);
   line-height: 1.2;
   color: var(--font-color-heading);
+  margin-bottom: 1.5rem;
 }
 
 .header-img-heading h1 {

@@ -1,15 +1,20 @@
 
 :root {
+	/*PRIMARY COLORS*/
     --primary-color: #dd3333;
     --secondary-color: #0f6056;
 
-    --body-background-color: #efefef;
+	/*BACKGROUND COLORS*/
+    --body-background-color: #f4f4f4;
+    --inner-content-background-color: #ffffff;
     --header-background-color: #ffffff;
-    --footer-background-color: #8b8b8b;
+    --footer-background-color: #bfbfbf;
 
+	/*BUTTON COLORS*/
     --button-root-color: #ff2b2b;
     --button-hover-color: #000000;
 
+	/*FONTS*/
     --headline-xs: 24px;
     --headline-s: 26px;
     --headline-m: 28px;
@@ -18,17 +23,24 @@
     --headline-xxl: 60px;
     --body-text-size: 18px;
 
-    --inner-content-width: 1400px;
-    --inner-header-width: 1400px;
-    --inner-footer-width: 1400px;
+	/*GRID WIDTH*/
+    --inner-content-width: 1600px;
+    --inner-header-width: 1600px;
+    --inner-footer-width: 1600px;
 
+	/*FONTS*/
     --font-family-heading: 'DIN 2014', sans-serif;
     --font-family-text: 'DIN 2014', sans-serif;
 
-    --font-color-heading: #8224e3;
-    --font-color-text: #81d742;
-    --font-color-header: #dd3333;
-    --font-color-footer: #eeee22;
-    --font-color-header-hover: #dd9933;
-    --font-color-footer-hover: #dd3333;
+	/*FONT COLORS*/
+    --font-color-heading: #000000;
+    --font-color-text: #636363;
+    --font-color-header: #000000;
+    --font-color-footer: #ffffff;
+    --font-color-header-hover: #adadad;
+    --font-color-footer-hover: #000000;
+	
+	/*MENU SETTINGS*/
+    --font-menu-size: 20px;
+    --margin-menu-size: 24px;
 }

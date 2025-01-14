@@ -48,12 +48,13 @@
 
 .main-header nav ul li {
   display: inline-block;
-  margin-left: 20px;
+  margin: 0 var(--margin-menu-size);
 }
 
 .main-header nav ul li a {
   text-decoration: none;
   color: var(--font-color-header);
+  font-size: var(--font-menu-size);
 }
 
 /* Hover-Effekt für Links */

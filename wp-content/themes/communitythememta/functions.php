@@ -87,6 +87,7 @@ function generate_dynamic_css() {
     $secondaryColor = get_field('secondary_color', 'option');
 
     $backgroundBodyColor = get_field('background_body_color', 'option');
+    $backgroundInnerContentColor = get_field('background_inner_content_color', 'option');
     $backgroundHeaderColor = get_field('background_header_color', 'option');
     $backgroundFooterColor = get_field('background_footer_color', 'option');
 
@@ -113,18 +114,26 @@ function generate_dynamic_css() {
 	$fontColorHeaderHover = get_field('font_color_header_hover', 'option');
 	$fontColorFooterHover = get_field('font_color_footer_hover', 'option');
 
+	$fontMenuSize = get_field('font_size_menu', 'option') . "px";
+	$marginMenuSize = get_field('margin_size_menu', 'option') . "px";
+
     $css_content = "
 :root {
+	/*PRIMARY COLORS*/
     --primary-color: {$primaryColor};
     --secondary-color: {$secondaryColor};
 
+	/*BACKGROUND COLORS*/
     --body-background-color: {$backgroundBodyColor};
+    --inner-content-background-color: {$backgroundInnerContentColor};
     --header-background-color: {$backgroundHeaderColor};
     --footer-background-color: {$backgroundFooterColor};
 
+	/*BUTTON COLORS*/
     --button-root-color: {$buttonRootColor};
     --button-hover-color: {$buttonHoverColor};
 
+	/*FONTS*/
     --headline-xs: {$headlineXS};
     --headline-s: {$headlineS};
     --headline-m: {$headlineM};
@@ -133,19 +142,26 @@ function generate_dynamic_css() {
     --headline-xxl: {$headlineXXL};
     --body-text-size: {$bodyText};
 
+	/*GRID WIDTH*/
     --inner-content-width: {$innerContentWidth};
     --inner-header-width: {$innerHeaderWidth};
     --inner-footer-width: {$innerFooterWidth};
 
+	/*FONTS*/
     --font-family-heading: {$fontFamilyHeading};
     --font-family-text: {$fontFamilyText};
 
+	/*FONT COLORS*/
     --font-color-heading: {$fontColorHeading};
     --font-color-text: {$fontColorText};
     --font-color-header: {$fontColorHeader};
     --font-color-footer: {$fontColorFooter};
     --font-color-header-hover: {$fontColorHeaderHover};
     --font-color-footer-hover: {$fontColorFooterHover};
+	
+	/*MENU SETTINGS*/
+    --font-menu-size: {$fontMenuSize};
+    --margin-menu-size: {$marginMenuSize};
 }";
 
     // CSS-Datei aktualisieren

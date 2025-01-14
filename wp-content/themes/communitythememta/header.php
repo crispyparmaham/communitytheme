@@ -30,7 +30,7 @@
             }
         ?>
             <div class="main-logo <?php echo esc_attr($logo_class); ?>">
-                <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" <?php echo $logo_style; ?>>
+                <a href="/"><img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($logo['alt']); ?>" <?php echo $logo_style; ?>></a>
             </div>
         <?php else : ?>
             <h1><a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a></h1>
