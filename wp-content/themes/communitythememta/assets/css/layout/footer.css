@@ -16,8 +16,20 @@
 
 .footer-top {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer-top .footer-top-inner {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.footer-top .footer-top-inner .footer-contact-info p {
+  margin-top: 20px;
 }
 
 .footer-bottom {
