@@ -12,18 +12,19 @@
 
 .header-img-heading h1 {
   color: #ffffff;
-  font-size: 60px;
+  font-size: var(--headline-xxl);
+  line-height: 1.2;
 }
 
 p {
   font-family: var(--font-family-text);
 }
 
-.home h1.wp-block-heading {
+h1.wp-block-heading {
   font-size: var(--headline-xxl);
 }
 
-.home h2.wp-block-heading {
+h2.wp-block-heading {
   font-size: var(--headline-xl);
 }
 

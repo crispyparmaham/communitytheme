@@ -15,7 +15,6 @@ function enqueue_theme_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_theme_styles');
 
-
 // === GENERATE DYNAMIC CSS === //
 function generate_dynamic_css() {
     // Pfad zur variables.css
@@ -39,13 +38,15 @@ function generate_dynamic_css() {
     $buttonHoverColor = get_field('button_hover_color', 'option');
 
     // === FONT SETTINGS === //
-    $headlineXS = get_field('h_six', 'option') . "px";
-    $headlineS = get_field('h_five', 'option') . "px";
-    $headlineM = get_field('h_four', 'option') . "px";
-    $headlineL = get_field('h_three', 'option') . "px";
-    $headlineXL = get_field('h_two', 'option') . "px";
-    $headlineXXL = get_field('h_one', 'option') . "px";
-    $bodyText = get_field('body_text', 'option') . "px";
+    $bodyText = get_field('body_text', 'option') ? get_field('body_text', 'option') : 18;
+
+    // Dynamische Überschrift-Größen basierend auf bodyText
+    $headlineXS = "clamp(" . ($bodyText * 1.2) . "px, 3vw, " . ($bodyText * 1.5) . "px)";
+    $headlineS = "clamp(" . ($bodyText * 1.3) . "px, 3.5vw, " . ($bodyText * 1.6) . "px)";
+    $headlineM = "clamp(" . ($bodyText * 1.5) . "px, 4vw, " . ($bodyText * 1.8) . "px)";
+    $headlineL = "clamp(" . ($bodyText * 1.8) . "px, 5vw, " . ($bodyText * 2.2) . "px)";
+    $headlineXL = "clamp(" . ($bodyText * 2.2) . "px, 6vw, " . ($bodyText * 2.8) . "px)";
+    $headlineXXL = "clamp(" . ($bodyText * 2.5) . "px, 8vw, " . ($bodyText * 3.3) . "px)";
 
     $fontFamilyHeading = get_field('font_heading', 'option');
     $fontFamilyText = get_field('font_text', 'option');
@@ -58,7 +59,7 @@ function generate_dynamic_css() {
     $fontColorFooterHover = get_field('font_color_footer_hover', 'option');
 
     // === MENU SETTINGS === //
-    $fontMenuSize = get_field('font_size_menu', 'option') . "px";
+    $fontMenuSize = "clamp(" . ($bodyText * 1.0) . "px, 3vw, " . ($bodyText * 1.2) . "px)";
     $marginMenuSize = get_field('margin_size_menu', 'option') . "px";
 
     // === BUILD CSS CONTENT === //
@@ -85,7 +86,7 @@ function generate_dynamic_css() {
     --headline-l: {$headlineL};
     --headline-xl: {$headlineXL};
     --headline-xxl: {$headlineXXL};
-    --body-text-size: {$bodyText};
+    --body-text-size: {$bodyText}px;
 
     /* GRID WIDTH */
     --inner-content-width: {$innerContentWidth};

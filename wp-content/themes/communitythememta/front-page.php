@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="content-container">
+<main class="content-container">
 	<section class="header-img-wrap">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<?php $headerImage = get_the_post_thumbnail_url( null, 'full' ); ?>

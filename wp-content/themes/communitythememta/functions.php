@@ -53,3 +53,17 @@ add_filter('acf/load_field/name=selected_menu', 'populate_selected_menu_field');
 require_once(plugin_dir_path(__FILE__) . '/functions/css-variables.php'); // Dynamische CSS-Variablen
 require_once(plugin_dir_path(__FILE__) . '/functions/load-styles.php'); // Stylesheets laden
 
+
+
+function use_custom_template_for_termin($template) {
+    if (is_singular('termin')) {
+        $custom_template = locate_template('single-termin.php');
+        if ($custom_template) {
+            return $custom_template;
+        }
+    }
+    return $template;
+}
+add_filter('template_include', 'use_custom_template_for_termin');
+
+

@@ -15,12 +15,12 @@
     --button-hover-color: #000000;
 
     /* FONT SIZES */
-    --headline-xs: 24px;
-    --headline-s: 26px;
-    --headline-m: 28px;
-    --headline-l: 34px;
-    --headline-xl: 48px;
-    --headline-xxl: 60px;
+    --headline-xs: clamp(21.6px, 3vw, 27px);
+    --headline-s: clamp(23.4px, 3.5vw, 28.8px);
+    --headline-m: clamp(27px, 4vw, 32.4px);
+    --headline-l: clamp(32.4px, 5vw, 39.6px);
+    --headline-xl: clamp(39.6px, 6vw, 50.4px);
+    --headline-xxl: clamp(45px, 8vw, 59.4px);
     --body-text-size: 18px;
 
     /* GRID WIDTH */
@@ -41,6 +41,6 @@
     --font-color-footer-hover: #000000;
 
     /* MENU SETTINGS */
-    --font-menu-size: 20px;
+    --font-menu-size: clamp(18px, 3vw, 21.6px);
     --margin-menu-size: 24px;
 }

@@ -1,7 +1,11 @@
-#content-container .left-content-column > div,
-#content-container .left-content-column > figure,
-#content-container .left-content-column > p {
+.main-content .left-content-column .wp-block-media-text,
+.main-content .left-content-column .wp-block-image,
+.main-content .left-content-column > p {
   margin: 2rem 0;
+}
+
+.main-content .left-content-column > div:first-child {
+  margin: 0;
 }
 
 .main-content {
@@ -16,7 +20,7 @@
 
 .left-content-column {
   flex: 7;
-  padding: 0.5rem 2.5rem;
+  padding: 2.5rem;
   background-color: var(--inner-content-background-color);
 }
 
@@ -32,7 +36,7 @@
   top: 50px;
 }
 
-#content-container .header-img-wrap {
+.content-container .header-img-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +44,7 @@
   margin: 0;
 }
 
-#content-container .header-img-heading {
+.content-container .header-img-heading {
   margin: 0 auto;
   width: 100%;
   max-width: var(--inner-content-width);
