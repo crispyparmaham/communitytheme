@@ -22,9 +22,14 @@
 
 .right-content-column {
   flex: 3;
-  padding: 2rem;
+  height: auto;
+}
+
+.right-content-column .scroll-container {
   background-color: var(--inner-content-background-color);
-  height: fit-content;
+  padding: 2rem;
+  position: sticky;
+  top: 50px;
 }
 
 #content-container .header-img-wrap {

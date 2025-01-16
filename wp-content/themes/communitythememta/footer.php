@@ -10,8 +10,6 @@
 
 			if ( $logo ) :
 				$logo_class = '';
-				$logo_style = '';
-
 				switch ( $logo_size ) {
 					case 'small':
 						$logo_class = 'logo-small';
@@ -25,19 +23,31 @@
 				}
 				?>
 				<div class="main-logo <?php echo esc_attr( $logo_class ); ?>">
-					<a href="/"><img src="<?php echo esc_url( $logo['url'] ); ?>"
-							alt="<?php echo esc_attr( $logo['alt'] ); ?>" <?php echo $logo_style; ?>></a>
+					<a href="/">
+						<img src="<?php echo esc_url( $logo['url'] ); ?>"
+							alt="<?php echo esc_attr( $logo['alt'] ?: __( 'Footer-Logo von', 'communitytheme' ) . ' ' . get_bloginfo( 'name' ) ); ?>">
+					</a>
 				</div>
 			<?php else : ?>
-				<h1><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1>
+					<a href="<?php echo esc_url( home_url() ); ?>">
+						<?php bloginfo( 'name' ); ?>
+					</a>
+				</h1>
 			<?php endif; ?>
+
 			<div class="footer-top-inner">
 				<div class="footer-contact-info">
 					<?php $contact_info = get_field( 'contact', 'option' ); ?>
-					<h4>Kontakt</h4>
-					<?php echo $contact_info; ?>
+					<h4><?php _e( 'Kontakt', 'communitytheme' ); ?></h4>
+					<?php if ( $contact_info ) : ?>
+						<address><?php echo wp_kses_post( $contact_info ); ?></address>
+					<?php else : ?>
+						<p><?php _e( 'Keine Kontaktinformationen verfügbar.', 'communitytheme' ); ?></p>
+					<?php endif; ?>
 				</div>
-				<div class="">
+
+				<div class="footer-navigation">
 					<?php
 					$selected_menu_id = get_field( 'selected_menu', 'option' );
 					if ( $selected_menu_id ) :
@@ -45,6 +55,7 @@
 							'menu' => $selected_menu_id,
 							'container' => 'nav',
 							'container_class' => 'main-navigation',
+							'aria-label' => __( 'Footer-Navigation', 'communitytheme' ),
 						) );
 					else :
 						echo '<p>' . __( 'Kein Menü ausgewählt.', 'communitytheme' ) . '</p>';
@@ -52,19 +63,20 @@
 					?>
 				</div>
 			</div>
-
 		</div>
+
 		<div class="footer-bottom">
 			<div class="footer-copyright">
 				<span>&copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?></span>
 			</div>
-			<div class="footer-policy">
-				<a href="/impressum">Impressum</a>
-				<a href="/datenschutz">Datenschutz</a>
-			</div>
+			<nav class="footer-policy">
+				<ul>
+					<li><a href="/impressum" rel="nofollow"><?php _e( 'Impressum', 'communitytheme' ); ?></a></li>
+					<li><a href="/datenschutz" rel="nofollow"><?php _e( 'Datenschutz', 'communitytheme' ); ?></a></li>
+				</ul>
+			</nav>
 		</div>
 	</div>
-
 </footer>
 </body>
 

@@ -9,6 +9,14 @@ wp_enqueue_script(
     true // Script wird im Footer geladen
 );
 
+
+// === REGISTER CUSTOM GUTENBERG BLOCKS === //
+function register_blocks() {
+    register_block_type(__DIR__ . '/blocks/termine'); // Registrierung des "Termine"-Blocks
+}
+add_action('init', 'register_blocks');
+
+
 // === REGISTER SIDEBARS === //
 function theme_register_sidebars() {
     register_sidebar([
@@ -40,12 +48,8 @@ function populate_selected_menu_field($field) {
 }
 add_filter('acf/load_field/name=selected_menu', 'populate_selected_menu_field');
 
-// === REGISTER CUSTOM GUTENBERG BLOCKS === //
-function register_blocks() {
-    register_block_type(__DIR__ . '/blocks/termine'); // Registrierung des "Termine"-Blocks
-}
-add_action('init', 'register_blocks');
 
 // === INCLUDE EXTERNAL FUNCTION FILES === //
 require_once(plugin_dir_path(__FILE__) . '/functions/css-variables.php'); // Dynamische CSS-Variablen
 require_once(plugin_dir_path(__FILE__) . '/functions/load-styles.php'); // Stylesheets laden
+

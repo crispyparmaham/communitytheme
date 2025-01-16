@@ -1,20 +1,20 @@
 
 :root {
-	/*PRIMARY COLORS*/
+    /* PRIMARY COLORS */
     --primary-color: #dd3333;
     --secondary-color: #0f6056;
 
-	/*BACKGROUND COLORS*/
+    /* BACKGROUND COLORS */
     --body-background-color: #f4f4f4;
     --inner-content-background-color: #ffffff;
     --header-background-color: #ffffff;
     --footer-background-color: #bfbfbf;
 
-	/*BUTTON COLORS*/
+    /* BUTTON COLORS */
     --button-root-color: #ff2b2b;
     --button-hover-color: #000000;
 
-	/*FONTS*/
+    /* FONT SIZES */
     --headline-xs: 24px;
     --headline-s: 26px;
     --headline-m: 28px;
@@ -23,24 +23,24 @@
     --headline-xxl: 60px;
     --body-text-size: 18px;
 
-	/*GRID WIDTH*/
+    /* GRID WIDTH */
     --inner-content-width: 1600px;
     --inner-header-width: 1600px;
     --inner-footer-width: 1600px;
 
-	/*FONTS*/
+    /* FONT SETTINGS */
     --font-family-heading: 'DIN 2014', sans-serif;
     --font-family-text: 'DIN 2014', sans-serif;
 
-	/*FONT COLORS*/
+    /* FONT COLORS */
     --font-color-heading: #000000;
     --font-color-text: #636363;
     --font-color-header: #000000;
     --font-color-footer: #ffffff;
     --font-color-header-hover: #adadad;
     --font-color-footer-hover: #000000;
-	
-	/*MENU SETTINGS*/
+
+    /* MENU SETTINGS */
     --font-menu-size: 20px;
     --margin-menu-size: 24px;
 }
